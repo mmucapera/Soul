@@ -48,17 +48,10 @@ class SettingsContainer extends Component {
                         {
                             iconName: 'credit-card-settings',
                             bagdeCount: '0',
-                            name: 'Payment Method',
+                            name: 'Top Up',
                             iconNameRight: "arrow-right",
                             backgroundColor: "#035e59"
-                        },                     {
-                            iconName: 'cellphone-iphone',
-                            bagdeCount: '0',
-                            name: 'Top Up My Account',
-                            iconNameRight: "arrow-right",
-                            backgroundColor: "#035e59"
-                          },
-                          
+                        },                       
                     ]
                 },
                  {
@@ -234,7 +227,7 @@ class SettingsContainer extends Component {
             )
         } 
 
-        else if(item.name == "Payment Method") {
+        else if(item.name == "Top Up") {
             this.props.navigation.navigate("PaymentMethod");
         }
 
@@ -243,18 +236,12 @@ class SettingsContainer extends Component {
         }
 
         else if(item.name == "Rate Us") {
-            //link to app store if ios or playstore if android
+        
         }
 
         else if(item.name == "About Us") {
             this.props.navigation.navigate("AboutUs");
-        }
- 
-        else if(item.name == "Top Up My Account") {
-            //this.props.navigation.navigate("AboutUs");
-        }
-    
-    
+        }  
     }
 
     onHandlePlayer = async items => {

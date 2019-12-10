@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { View, Text, SafeAreaView, SectionList, ScrollView, Alert } from 'react-native';
 import { MinPlayerComponent } from '../../components/player';
-import ItemSetting from './settings';
 import HeaderComponent from './header';
 import strings from '../../localization/strings';
 import { STYLES } from '../../themes'
@@ -20,7 +19,7 @@ class AboutUsContainer extends Component {
     static navigationOptions = ({ }) => {
         return {
         headerLeft: (<View style={STYLES.headerContainer}>
-        <Text style={STYLES.headerContainer.title}>{strings.settings}</Text></View>)
+    //    <Text style={STYLES.headerContainer.title}>{strings.settings}</Text></View>)
         };
     }             
     constructor(props) {
@@ -36,77 +35,13 @@ class AboutUsContainer extends Component {
             display_name: '',
             email: '',
             menus: [
-                { 
-                    data: [
-                        {
-                            iconName: 'account-outline',
-                            bagdeCount: '0',
-                            name: 'My Profile',
-                            iconNameRight: "arrow-right",
-                            backgroundColor: "#233ba3"
-                        },  
-                        {
-                            iconName: 'credit-card-settings',
-                            bagdeCount: '0',
-                            name: 'Payment Method',
-                            iconNameRight: "arrow-right",
-                            backgroundColor: "#035e59"
-                        },                     {
-                            iconName: 'cellphone-iphone',
-                            bagdeCount: '0',
-                            name: 'Top Up My Account',
-                            iconNameRight: "arrow-right",
-                            backgroundColor: "#035e59"
-                          },
-                          
-                    ]
-                },
                  {
                    data:[
-                     {
-                       iconName: 'airplane-off',
-                       bagdeCount: '0',
-                       name: 'Offline Mode',
-                       iconNameRight: "arrow-right",
-                       backgroundColor: "#006d05"
-                     }
+
                    ],
-                   description: strings.in_offline_mode_you_can_only_listen_to_previously_downloaded_playlist_and_albums
+                   description:"This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. The Privacy Policy for soul has been created with the help of Privacy Policy Generator.We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions."
                  },
-                 {
-                   data:[
-                    {
-                        iconName: 'comment-question-outline',
-                        bagdeCount: '0',
-                        name: 'Privacy and Policy',
-                        iconNameRight: "arrow-right",
-                        backgroundColor: "#36bd54"
-                    },
-                     {
-                       iconName: 'star',
-                       bagdeCount: '0',
-                       name: 'Rate Us',
-                       iconNameRight: "arrow-right",
-                       backgroundColor: "#ffc300"
-                     },
-                     {
-                       iconName: 'information-outline',
-                       bagdeCount: '0',
-                       name: 'About Us',
-                       iconNameRight: "arrow-right",
-                       backgroundColor: "#a3a3a3"
-                     },
-                     {
-                        iconName: 'logout-variant',
-                        bagdeCount: '0',
-                        name: 'Log out',
-                        iconNameRight: "arrow-right",
-                        backgroundColor: "#35d2f2"
-                    },
-                   ]
-                 }
             ],
-            offlineMode: false
         };
     }
 
@@ -209,48 +144,6 @@ class AboutUsContainer extends Component {
 
     }
 
-    _onSettingButtonPress = item => {
-        if(item.name == "My Profile") {
-            this.props.navigation.navigate("MyAccount");
-        }     
-        
-        else if(item.name == "Log out") {
-            Alert.alert("Waves.", "Do you really want to logout?",
-            [
-                {text: 'Cancel', onPress: null},
-                {text: 'OK', onPress: async() => {
-                    try {
-                        await AsyncStorage.setItem("signin", "false");
-                        await AsyncStorage.setItem("email", "");
-                        await AsyncStorage.setItem("password", "this.state.password");
-                    } catch(error) {
-                        console.log(error.message);
-                    }
-                    await TrackPlayer.stop();
-                    this.props.navigation.navigate('AuthStack')}
-                }
-            ],
-            { cancelable: true }
-            )
-        } 
-
-        else if(item.name == "Payment Method") {
-            this.props.navigation.navigate("PaymentMethod");
-        }
-
-        else if(item.name == "Privacy and Policy") {
-            this.props.navigation.navigate("PrivacyPolicy");
-        }
-
-        else if(item.name == "Rate Us") {
-            //link to app store if ios or playstore if android
-        }
-
-        else if(item.name == "About Us") {
-            this.props.navigation.navigate("AboutUs");
-        }
-    }
-
     onHandlePlayer = async items => {
         const currentTrackID = await TrackPlayer.getCurrentTrack();
         if(currentTrackID != null) {
@@ -305,22 +198,7 @@ class AboutUsContainer extends Component {
         <ScrollView> 
           <View style={[STYLES.scrollContainer]}>
           <SectionList
-            ListHeaderComponent={
-              <HeaderComponent 
-                avatar_url = {this.state.avatar_url}
-                display_name = {this.state.display_name}
-                email = {this.state.email}/>
-            }
-            ItemSeparatorComponent={renderSeparator}
-            renderItem={({ item, index }) =>
-              <ItemSetting
-                item={item}
-                index={index}
-                offlineMode={offlineMode}
-                toggleSwitch={this.toggleSwitch}
-                onPress = {() => this._onSettingButtonPress(item)}
-              />
-            }
+
             renderSectionFooter={({ section: { description } }) => (
               <View style={styles.sectionFooter}>
                 {description &&

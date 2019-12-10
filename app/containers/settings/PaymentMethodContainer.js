@@ -41,17 +41,10 @@ class PaymentMethodContainer extends Component {
                         {
                             iconName: 'account-outline',
                             bagdeCount: '0',
-                            name: 'MPesa',
+                            name: 'M-Pesa',
                             iconNameRight: "arrow-right",
                             backgroundColor: "#233ba3"
                         },
-                        {
-                            iconName: 'credit-card-settings',
-                            bagdeCount: '0',
-                            name: 'Points (Coming Soon)',
-                            iconNameRight: "arrow-right",
-                            backgroundColor: "#035e59"
-                        },     
                         {
                             iconName: 'credit-card-settings',
                             bagdeCount: '0',
@@ -59,6 +52,13 @@ class PaymentMethodContainer extends Component {
                             iconNameRight: "arrow-right",
                             backgroundColor: "#035e59"
                         },    
+                        {
+                            iconName: 'credit-card-settings',
+                            bagdeCount: '0',
+                            name: 'Points (Coming Soon)',
+                            iconNameRight: "arrow-right",
+                            backgroundColor: "#035e59"
+                        },   
                     ]
                 },
             ],
@@ -166,7 +166,7 @@ class PaymentMethodContainer extends Component {
     }
 
     _onSettingButtonPress = item => {
-        if(item.name == "MPesa") {
+        if(item.name == "M-Pesa") {
             this.props.navigation.navigate("MPesa");
         }  
                 

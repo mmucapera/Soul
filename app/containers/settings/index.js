@@ -9,4 +9,5 @@ import PrivacyPolicyContainer from './PrivacyPolicyContainer'
 
 
 
-export { SettingsContainer, MyAccountContainer, PaymentMethodContainer, PaymentContainer,MPesaContainer,TopUpContainer,AboutUsContainer,PrivacyPolicyContainer} 
+export { SettingsContainer, MyAccountContainer, PaymentMethodContainer,
+     PaymentContainer,MPesaContainer,TopUpContainer,AboutUsContainer,PrivacyPolicyContainer} 
