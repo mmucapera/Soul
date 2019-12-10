@@ -1,4 +1,3 @@
-# react-native-audio-app
-beautiful audio app
+Soul
 
-live:watersu91125 .  this is my skype id. if you can use skype, then you can contact me on skype.
+A react native music streaming app by Marcos Mucapera
