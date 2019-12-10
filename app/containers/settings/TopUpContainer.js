@@ -50,7 +50,7 @@ const picker_options = {
     },
 };
 
-class MPesaContainer extends Component {
+class TopUpContainer extends Component {
 
     static navigationOptions = ({ navigation }) => {
         const { state } = navigation;
@@ -628,4 +628,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default MPesaContainer
+export default TopUpContainer

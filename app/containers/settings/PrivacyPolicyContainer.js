@@ -15,7 +15,7 @@ const renderSeparator = () => (
   <View style={[styles.seperatorBorderBottom]} />
 );
 
-class SettingsContainer extends Component {
+class AboutUsContainer extends Component {
 
     static navigationOptions = ({ }) => {
         return {
@@ -249,12 +249,7 @@ class SettingsContainer extends Component {
         else if(item.name == "About Us") {
             this.props.navigation.navigate("AboutUs");
         }
- 
-        else if(item.name == "Top Up My Account") {
-            //this.props.navigation.navigate("AboutUs");
-        }
-    
-    
+
     }
 
     onHandlePlayer = async items => {
@@ -351,4 +346,4 @@ class SettingsContainer extends Component {
     );
   }
 }
-export default SettingsContainer
+export default AboutUsContainer

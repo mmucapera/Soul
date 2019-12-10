@@ -16,7 +16,7 @@ const HeaderComponent = props => (
                 source={props.avatar_url == "" ? require('../../images/avatar.png') : { uri: props.avatar_url }}
             />
             <View style = {{marginLeft: 10}}>
-                <Text style={styles.name} numberOfLines={1}>{props.display_name}</Text>
+                <Text style={styles.name} numberOfLines={2}>{props.display_name}</Text>
                 <Text style={styles.subLabel} numberOfLines={1}>{props.email}</Text>
             </View>
         </View>
