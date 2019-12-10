@@ -15,7 +15,7 @@ const renderSeparator = () => (
   <View style={[styles.seperatorBorderBottom]} />
 );
 
-class SettingsContainer extends Component {
+class PaymentMethodContainer extends Component {
 
     static navigationOptions = ({ }) => {
         return {
@@ -41,70 +41,26 @@ class SettingsContainer extends Component {
                         {
                             iconName: 'account-outline',
                             bagdeCount: '0',
-                            name: 'My Profile',
+                            name: 'MPesa',
                             iconNameRight: "arrow-right",
                             backgroundColor: "#233ba3"
-                        },  
+                        },
                         {
                             iconName: 'credit-card-settings',
                             bagdeCount: '0',
-                            name: 'Payment Method',
+                            name: 'Points (Coming Soon)',
                             iconNameRight: "arrow-right",
                             backgroundColor: "#035e59"
-                        },                     {
-                            iconName: 'cellphone-iphone',
+                        },     
+                        {
+                            iconName: 'credit-card-settings',
                             bagdeCount: '0',
-                            name: 'Top Up My Account',
+                            name: 'Credit Card',
                             iconNameRight: "arrow-right",
                             backgroundColor: "#035e59"
-                          },
-                          
+                        },    
                     ]
                 },
-                 {
-                   data:[
-                     {
-                       iconName: 'airplane-off',
-                       bagdeCount: '0',
-                       name: 'Offline Mode',
-                       iconNameRight: "arrow-right",
-                       backgroundColor: "#006d05"
-                     }
-                   ],
-                   description: strings.in_offline_mode_you_can_only_listen_to_previously_downloaded_playlist_and_albums
-                 },
-                 {
-                   data:[
-                    {
-                        iconName: 'comment-question-outline',
-                        bagdeCount: '0',
-                        name: 'Privacy and Policy',
-                        iconNameRight: "arrow-right",
-                        backgroundColor: "#36bd54"
-                    },
-                     {
-                       iconName: 'star',
-                       bagdeCount: '0',
-                       name: 'Rate Us',
-                       iconNameRight: "arrow-right",
-                       backgroundColor: "#ffc300"
-                     },
-                     {
-                       iconName: 'information-outline',
-                       bagdeCount: '0',
-                       name: 'About Us',
-                       iconNameRight: "arrow-right",
-                       backgroundColor: "#a3a3a3"
-                     },
-                     {
-                        iconName: 'logout-variant',
-                        bagdeCount: '0',
-                        name: 'Log out',
-                        iconNameRight: "arrow-right",
-                        backgroundColor: "#35d2f2"
-                    },
-                   ]
-                 }
             ],
             offlineMode: false
         };
@@ -210,32 +166,12 @@ class SettingsContainer extends Component {
     }
 
     _onSettingButtonPress = item => {
-        if(item.name == "My Profile") {
-            this.props.navigation.navigate("MyAccount");
-        }     
-        
-        else if(item.name == "Log out") {
-            Alert.alert("Waves.", "Do you really want to logout?",
-            [
-                {text: 'Cancel', onPress: null},
-                {text: 'OK', onPress: async() => {
-                    try {
-                        await AsyncStorage.setItem("signin", "false");
-                        await AsyncStorage.setItem("email", "");
-                        await AsyncStorage.setItem("password", "this.state.password");
-                    } catch(error) {
-                        console.log(error.message);
-                    }
-                    await TrackPlayer.stop();
-                    this.props.navigation.navigate('AuthStack')}
-                }
-            ],
-            { cancelable: true }
-            )
-        } 
-
-        else if(item.name == "Payment Method") {
-            this.props.navigation.navigate("PaymentMethod");
+        if(item.name == "MPesa") {
+            this.props.navigation.navigate("MPesa");
+        }  
+                
+        else if(item.name == "Credit Card") {
+            this.props.navigation.navigate("Payment");
         }
     }
 
@@ -333,4 +269,4 @@ class SettingsContainer extends Component {
     );
   }
 }
-export default SettingsContainer
+export default PaymentMethodContainer

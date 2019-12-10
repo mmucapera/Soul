@@ -50,13 +50,13 @@ const picker_options = {
     },
 };
 
-class MyAccountContainer extends Component {
+class MPesaContainer extends Component {
 
     static navigationOptions = ({ navigation }) => {
         const { state } = navigation;
         const params = state.params || {};
         return {
-            title: "My Profile",
+            title: "MPesa",
             // headerRight: (<View style={STYLES.headerContainer}>
             //     <TouchableOpacity onPress={() => params.onHandleShowModalSort()}>
             //         <Icon name="list" size={24} color={COLORS.text.primary} />
@@ -628,4 +628,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default MyAccountContainer
+export default MPesaContainer

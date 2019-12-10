@@ -38,11 +38,6 @@ class PaymentContainer extends Component {
         const params = state.params || {};
         return {
             title: "Credit Card",
-            // headerRight: (<View style={STYLES.headerContainer}>
-            //     <TouchableOpacity onPress={() => params.onHandleShowModalSort()}>
-            //         <Icon name="list" size={24} color={COLORS.text.primary} />
-            //     </TouchableOpacity>
-            // </View>) 
         };
     }
     constructor(props) {
