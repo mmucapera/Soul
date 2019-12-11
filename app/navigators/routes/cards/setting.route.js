@@ -1,6 +1,6 @@
 // import { createStackNavigator } from 'react-navigation';
 import {createStackNavigator} from "react-navigation-stack"
-import { SettingsContainer, MyAccountContainer,MPesaContainer,TopUpContainer,AboutUsContainer,PrivacyPolicyContainer,CreditCardContainer
+import { SettingsContainer, MyAccountContainer,MyPasswordContainer,MPesaContainer,TopUpContainer,AboutUsContainer,PrivacyPolicyContainer,CreditCardContainer
 
 } from '../../../containers/settings'
 import { COLORS, FONTS } from '../../../themes'
@@ -45,6 +45,10 @@ const SettingStack = createStackNavigator({
         screen: CreditCardContainer ,
         navigationOptions: navOptions,
         path: 'creditcard',
+    },MyPassword : {
+        screen: MyPasswordContainer ,
+        navigationOptions: navOptions,
+        path: 'mypassword',
     }
 
 

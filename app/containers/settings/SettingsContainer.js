@@ -46,6 +46,13 @@ class SettingsContainer extends Component {
                             backgroundColor: "#233ba3"
                         },  
                         {
+                            iconName: 'account-outline',
+                            bagdeCount: '0',
+                            name: 'Change Password',
+                            iconNameRight: "arrow-right",
+                            backgroundColor: "#233ba3"
+                        },  
+                        {
                             iconName: 'credit-card-settings',
                             bagdeCount: '0',
                             name: 'Top Up',
@@ -206,6 +213,10 @@ class SettingsContainer extends Component {
         if(item.name == "My Profile") {
             this.props.navigation.navigate("MyAccount");
         }     
+
+        if(item.name == "Change Password") {
+            this.props.navigation.navigate("MyPassword");
+        }    
         
         else if(item.name == "Log out") {
             Alert.alert("Waves.", "Do you really want to logout?",
