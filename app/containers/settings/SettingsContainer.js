@@ -165,7 +165,8 @@ class SettingsContainer extends Component {
         this.setState({
             avatar_url: global.avatar_url,
             display_name: global.display_name,
-            email: global.email
+            email: global.email,
+            
         })
 
         let playing_state = await TrackPlayer.getState();
@@ -313,7 +314,9 @@ class SettingsContainer extends Component {
               <HeaderComponent 
                 avatar_url = {this.state.avatar_url}
                 display_name = {this.state.display_name}
-                email = {this.state.email}/>
+                email = {this.state.email}
+                
+                />
             }
             ItemSeparatorComponent={renderSeparator}
             renderItem={({ item, index }) =>

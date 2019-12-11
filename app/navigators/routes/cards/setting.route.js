@@ -37,6 +37,10 @@ const SettingStack = createStackNavigator({
         screen: AboutUsContainer ,
         navigationOptions: navOptions,
         path: 'aboutus',
+    },MyPassword : {
+        screen: MyPasswordContainer ,
+        navigationOptions: navOptions,
+        path: 'mypassword',
     },PrivacyPolicy : {
         screen: PrivacyPolicyContainer ,
         navigationOptions: navOptions,
@@ -45,10 +49,6 @@ const SettingStack = createStackNavigator({
         screen: CreditCardContainer ,
         navigationOptions: navOptions,
         path: 'creditcard',
-    },MyPassword : {
-        screen: MyPasswordContainer ,
-        navigationOptions: navOptions,
-        path: 'mypassword',
     }
 
 

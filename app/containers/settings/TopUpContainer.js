@@ -20,7 +20,7 @@ class TopUpContainer extends Component {
     static navigationOptions = ({ }) => {
         return {
         headerLeft: (<View style={STYLES.headerContainer}>
-        <Text style={STYLES.headerContainer.title}>{strings.settings}</Text></View>)
+        <Text style={STYLES.headerContainer.title}>{strings.topup}</Text></View>)
         };
     }             
     constructor(props) {

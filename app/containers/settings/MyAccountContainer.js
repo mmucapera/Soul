@@ -278,27 +278,8 @@ class MyAccountContainer extends Component {
                             <TextInput style = {styles.input_text} placeholder = {'Display Name'} onChangeText = {(text) => this.setState({display_name: text})}>{this.state.display_name}</TextInput>
                         </View>
                     </View>
-                    <View style = {styles.input_component}>
-                        <View style = {styles.input_comment}>
-                            <Text style = {styles.comment_text}>New Password</Text>
-                        </View>
-                        <View style = {styles.input_text_view}>
-                            <TextInput style = {styles.input_text} placeholder = {'Password'} secureTextEntry = {true} onChangeText = {(text) => this.setState({password: text})}></TextInput>
-                        </View>
-                    </View>
-                    <View style = {styles.input_component}>
-                        <View style = {styles.input_comment}>
-                            <Text style = {styles.comment_text}>Confirm Password</Text>
-                        </View>
-                        <View style = {styles.input_text_view}>
-                            <TextInput style = {styles.input_text} placeholder = {'Confirm Password'} secureTextEntry = {true} onChangeText = {(text) => this.setState({confirm: text})}></TextInput>
-                        </View>
-                    </View>
-
-
-
                     <TouchableOpacity style = {{width: '100%', height: 40, marginTop: 20, justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff', borderRadius: 5}}>
-                        <Text style = {[{fontSize: 18, color: '#000000', fontFamily: FONTS.type.Bold,}]}>Update Password</Text>
+                        <Text style = {[{fontSize: 18, color: '#000000', fontFamily: FONTS.type.Bold,}]}>Update Profile</Text>
                     </TouchableOpacity>
                 </KeyboardAwareScrollView>
                 <MinPlayerComponent 

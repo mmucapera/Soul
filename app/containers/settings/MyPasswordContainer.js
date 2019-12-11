@@ -51,7 +51,7 @@ class MyPasswordContainer extends Component {
         const { state } = navigation;
         const params = state.params || {};
         return {
-            title: "My Profile",
+            title: "Change Password",
         };
     }
     constructor(props) {
@@ -155,19 +155,7 @@ class MyPasswordContainer extends Component {
     }
 
     avatar_selecet_alert() {
-        ImagePicker.showImagePicker(picker_options, (response) => {
-            const {error, uri, originalRotation} = response;
-            if (response.didCancel) {
-                console.log('image picker cancelled');
-            } else if (response.error) {
-                console.log('ImagePicker Error: ', response.error);
-            } else if (response.customButton) {
-                console.log('User tapped custom button: ', response.customButton);
-            } else {
-                this.setState({avatar_url: response.uri});
-                
-            }
-        });
+
     }
 
     onHandlePlayer = async(items) => {
@@ -261,22 +249,6 @@ class MyPasswordContainer extends Component {
                             <Image style = {{height: '100%', aspectRatio: 1}} resizeMode = {'cover'} source = {{uri: this.state.avatar_url}}/>
                         }  
                         </TouchableOpacity>
-                    </View>
-                    <View style = {styles.input_component}>
-                        <View style = {styles.input_comment}>
-                            <Text style = {styles.comment_text}>Email</Text>
-                        </View>
-                        <View style = {styles.input_text_view}>
-                            <TextInput editable={false}  style = {styles.input_text} placeholder = {'Email'} >{this.state.email}</TextInput>
-                        </View>
-                    </View>
-                    <View style = {styles.input_component}>
-                        <View style = {styles.input_comment}>
-                            <Text style = {styles.comment_text}>Display Name</Text>
-                        </View>
-                        <View style = {styles.input_text_view}>
-                            <TextInput style = {styles.input_text} placeholder = {'Display Name'} onChangeText = {(text) => this.setState({display_name: text})}>{this.state.display_name}</TextInput>
-                        </View>
                     </View>
                     <View style = {styles.input_component}>
                         <View style = {styles.input_comment}>
