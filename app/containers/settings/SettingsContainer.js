@@ -85,7 +85,7 @@ class SettingsContainer extends Component {
                      {
                        iconName: 'information-outline',
                        bagdeCount: '0',
-                       name: 'About Us',
+                       name: 'About',
                        iconNameRight: "arrow-right",
                        backgroundColor: "#a3a3a3"
                      },
@@ -228,7 +228,7 @@ class SettingsContainer extends Component {
         } 
 
         else if(item.name == "Top Up") {
-            this.props.navigation.navigate("PaymentMethod");
+            this.props.navigation.navigate("TopUp");
         }
 
         else if(item.name == "Privacy and Policy") {
@@ -239,7 +239,7 @@ class SettingsContainer extends Component {
         
         }
 
-        else if(item.name == "About Us") {
+        else if(item.name == "About") {
             this.props.navigation.navigate("AboutUs");
         }  
     }

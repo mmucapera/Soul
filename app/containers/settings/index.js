@@ -1,13 +1,12 @@
 import SettingsContainer from './SettingsContainer'
 import MyAccountContainer from './MyAccountContainer'
-import PaymentMethodContainer from './PaymentMethodContainer'
 import MPesaContainer from './MPesaContainer'
-import PaymentContainer from './PaymentContainer'
+import CreditCardContainer from './CreditCardContainer'
 import TopUpContainer from './TopUpContainer'
 import AboutUsContainer from './AboutUsContainer'
 import PrivacyPolicyContainer from './PrivacyPolicyContainer'
 
 
 
-export { SettingsContainer, MyAccountContainer, PaymentMethodContainer,
-     PaymentContainer,MPesaContainer,TopUpContainer,AboutUsContainer,PrivacyPolicyContainer} 
+export { SettingsContainer, MyAccountContainer,
+     CreditCardContainer,MPesaContainer,AboutUsContainer,TopUpContainer,PrivacyPolicyContainer} 

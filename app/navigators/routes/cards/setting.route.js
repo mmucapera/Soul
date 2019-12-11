@@ -1,6 +1,8 @@
 // import { createStackNavigator } from 'react-navigation';
 import {createStackNavigator} from "react-navigation-stack"
-import { SettingsContainer, MyAccountContainer, PaymentMethodContainer, PaymentContainer,MPesaContainer,TopUpContainer,AboutUsContainer,PrivacyPolicyContainer} from '../../../containers/settings'
+import { SettingsContainer, MyAccountContainer,MPesaContainer,TopUpContainer,AboutUsContainer,PrivacyPolicyContainer,CreditCardContainer
+
+} from '../../../containers/settings'
 import { COLORS, FONTS } from '../../../themes'
 const navOptions = {
     headerStyle: {
@@ -23,19 +25,11 @@ const SettingStack = createStackNavigator({
         screen: MyAccountContainer ,
         navigationOptions: navOptions,
         path: 'myaccount',
-    },PaymentMethod: {
-        screen: PaymentMethodContainer ,
-        navigationOptions: navOptions,
-        path: 'paymentmethod',
-    },Payment: {
-        screen: PaymentContainer ,
-        navigationOptions: navOptions,
-        path: 'payment',
     },MPesa: {
         screen: MPesaContainer , 
         navigationOptions: navOptions,
         path: 'mpesa',
-    },TopUpContainer: {
+    },TopUp: {
         screen: TopUpContainer ,
         navigationOptions: navOptions,
         path: 'topup',
@@ -47,6 +41,10 @@ const SettingStack = createStackNavigator({
         screen: PrivacyPolicyContainer ,
         navigationOptions: navOptions,
         path: 'aboutus',
+    },CreditCard : {
+        screen: CreditCardContainer ,
+        navigationOptions: navOptions,
+        path: 'creditcard',
     }
 
 

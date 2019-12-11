@@ -2,9 +2,9 @@ import LocalizedStrings from 'react-native-localization'
 
 const strings = new LocalizedStrings({
     'en-US': {
-        APP_NAME: "Samneang",
+        APP_NAME: "Soul",
         discover:"Discover",
-        welcome_to_2goadvisor: "Welcome to Samneang",
+        welcome_to_2goadvisor: "Welcome to Soul",
         login_with_facebook: 'Login with Facebook',
         login_with_google: 'Login with Google',
         by_proceeding_you_agree_to_our: 'By proceeding, you agree to our',
@@ -18,6 +18,11 @@ const strings = new LocalizedStrings({
         library: "Library",
         radio: "Radio",
         settings: "Settings",
+        about:"About Us",
+        topup:"Top Up",
+
+
+        privacy_policy:"Privacy Policy",
         search: "Search",
         userplaylist: 'User PlayList',
         trending: "Trending",

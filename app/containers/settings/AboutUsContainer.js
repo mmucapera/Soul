@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { View, Text, SafeAreaView, SectionList, ScrollView, Alert } from 'react-native';
 import { MinPlayerComponent } from '../../components/player';
+import ItemSetting from './settings';
 import HeaderComponent from './header';
 import strings from '../../localization/strings';
 import { STYLES } from '../../themes'
@@ -19,7 +20,7 @@ class AboutUsContainer extends Component {
     static navigationOptions = ({ }) => {
         return {
         headerLeft: (<View style={STYLES.headerContainer}>
-    //    <Text style={STYLES.headerContainer.title}>{strings.settings}</Text></View>)
+        <Text style={STYLES.headerContainer.title}>{strings.about}</Text></View>)
         };
     }             
     constructor(props) {
@@ -37,11 +38,12 @@ class AboutUsContainer extends Component {
             menus: [
                  {
                    data:[
-
                    ],
-                   description:"This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. The Privacy Policy for soul has been created with the help of Privacy Policy Generator.We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions."
+                   description: strings.in_offline_mode_you_can_only_listen_to_previously_downloaded_playlist_and_albums
                  },
+
             ],
+            offlineMode: false
         };
     }
 
@@ -136,13 +138,6 @@ class AboutUsContainer extends Component {
         // this.props.navigation.navigate("OfflineAppStack");
     }
 
-    onPress = () =>{
-
-    }
-
-    showActionSheetLogOut = () => {
-
-    }
 
     onHandlePlayer = async items => {
         const currentTrackID = await TrackPlayer.getCurrentTrack();
@@ -198,7 +193,16 @@ class AboutUsContainer extends Component {
         <ScrollView> 
           <View style={[STYLES.scrollContainer]}>
           <SectionList
-
+            ItemSeparatorComponent={renderSeparator}
+            renderItem={({ item, index }) =>
+              <ItemSetting
+                item={item}
+                index={index}
+                offlineMode={offlineMode}
+                toggleSwitch={this.toggleSwitch}
+                onPress = {() => this._onSettingButtonPress(item)}
+              />
+            }
             renderSectionFooter={({ section: { description } }) => (
               <View style={styles.sectionFooter}>
                 {description &&
